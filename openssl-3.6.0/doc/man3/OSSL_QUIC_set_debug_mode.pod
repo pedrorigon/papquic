@@ -1,0 +1,69 @@
+=pod
+
+=head1 NAME
+
+OSSL_QUIC_set_debug_mode, OSSL_QUIC_set_debug_role,
+OSSL_QUIC_set_packet_log_mode - control QUIC logging inside libssl
+
+=head1 SYNOPSIS
+
+ #include <openssl/quic.h>
+
+ void OSSL_QUIC_set_debug_mode(int enabled);
+ void OSSL_QUIC_set_debug_role(const char *role);
+ void OSSL_QUIC_set_packet_log_mode(int enabled);
+
+=head1 DESCRIPTION
+
+B<OSSL_QUIC_set_debug_mode()> toggles verbose diagnostic logging for the QUIC
+implementation inside libssl. The logging is disabled by default. Passing a
+non-zero I<enabled> value activates timestamped debug prints that describe key
+transport events (for example address validation, RETRY handling, amplification
+credit changes, and handshake state transitions). Passing zero disables the
+logging again.
+
+The toggle is process-wide and should be applied before creating QUIC SSL
+objects. Applications that do not need the diagnostics should leave the feature
+disabled to avoid unnecessary branches on the QUIC hot paths.
+
+B<OSSL_QUIC_set_debug_role()> selects the role label rendered in front of each
+debug line. Typical values are "CLIENT" and "SERVER". Passing NULL or an empty
+string restores the default "QUIC" label. This function affects future log
+entries produced after the change and can be called at any point once per
+process.
+
+B<OSSL_QUIC_set_packet_log_mode()> enables a structured packet transmission log
+targeted at benchmarking and troubleshooting use cases. When activated (by
+passing a non-zero I<enabled> value), libssl writes one line per transmitted
+packet detailing the timestamp, packet number, packet type and payload size.
+Server endpoints additionally report the remaining anti-amplification credit
+after each send. Passing zero disables the packet log again. As with debug
+logging, the mode is global and should be selected before spawning QUIC
+connections.
+
+=head1 RETURN VALUES
+
+B<OSSL_QUIC_set_debug_mode()>, B<OSSL_QUIC_set_debug_role()> and
+B<OSSL_QUIC_set_packet_log_mode()> do not
+return a value.
+
+=head1 SEE ALSO
+
+L<openssl-quic(7)>
+
+=head1 HISTORY
+
+B<OSSL_QUIC_set_debug_mode()> was added in OpenSSL 3.7.
+B<OSSL_QUIC_set_debug_role()> was added in OpenSSL 3.7.
+B<OSSL_QUIC_set_packet_log_mode()> was added in OpenSSL 3.7.
+
+=head1 COPYRIGHT
+
+Copyright 2025 The OpenSSL Project Authors. All Rights Reserved.
+
+Licensed under the Apache License 2.0 (the "License").  You may not use
+this file except in compliance with the License.  You can obtain a copy
+in the file LICENSE in the source distribution or at
+L<https://www.openssl.org/source/license.html>.
+
+=cut

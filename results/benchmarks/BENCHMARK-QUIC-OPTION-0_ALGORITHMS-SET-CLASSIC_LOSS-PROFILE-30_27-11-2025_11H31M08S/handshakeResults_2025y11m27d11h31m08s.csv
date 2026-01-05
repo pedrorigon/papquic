@@ -1,0 +1,11 @@
+kem,signature,kem_category,signature_category,loss_profile,iterations,outliers_removed,mean_ms,std_ms,ci95_low_ms,ci95_high_ms,quic_mode
+secp256r1,ED25519,classic,classic,30,8,1,376.745000,517.520653,18.121484,735.368516,0 - default
+secp256r1,ED448,classic,classic,30,8,2,402.053750,553.645472,18.397011,785.710489,0 - default
+secp384r1,ED25519,classic,classic,30,8,1,1871.287500,2516.197859,127.651342,3614.923658,0 - default
+secp384r1,ED448,classic,classic,30,8,2,256.621250,467.220088,0.000000,580.388253,0 - default
+secp521r1,ED25519,classic,classic,30,10,0,919.698000,893.429980,365.944362,1473.451638,0 - default
+secp521r1,ED448,classic,classic,30,9,1,572.781111,734.653140,92.807727,1052.754496,0 - default
+x25519,ED25519,classic,classic,30,8,1,254.780000,468.736658,0.000000,579.597932,0 - default
+x25519,ED448,classic,classic,30,10,0,1205.354000,1402.222652,336.247396,2074.460604,0 - default
+x448,ED25519,classic,classic,30,7,2,2.077143,0.028115,2.056315,2.097971,0 - default
+x448,ED448,classic,classic,30,8,2,506.427500,1070.506299,0.000000,1248.250518,0 - default
