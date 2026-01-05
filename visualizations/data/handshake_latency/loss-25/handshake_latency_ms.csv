@@ -1,0 +1,9 @@
+kem,signature,kem_category,signature_category,loss_profile,iterations,outliers_removed,mean_ms,std_ms,ci95_low_ms,ci95_high_ms,quic_mode
+MLKEM512,MLDSA44,pqc,pqc,25,20,0,1008.458000,1335.848483,422.996589,1593.919411,0 - default
+MLKEM512,falcon512,pqc,pqc,25,18,1,394.932222,501.146005,163.414580,626.449865,0 - default
+MLKEM512,falconpadded512,pqc,pqc,25,15,4,3.498000,1.508444,2.734622,4.261378,0 - default
+MLKEM512,sphincssha2128fsimple,pqc,pqc,25,17,2,634.210000,932.972991,190.702792,1077.717208,0 - default
+MLKEM512,sphincsshake128fsimple,pqc,pqc,25,18,2,494.222778,625.602592,205.209125,783.236430,0 - default
+MLKEM768,sphincssha2192fsimple,pqc,pqc,25,16,3,166.597500,333.335977,3.262871,329.932129,0 - default
+MLKEM1024,falcon1024,pqc,pqc,25,15,4,28.814667,45.190811,5.944961,51.684373,0 - default
+bikel1,falcon512,pqc,pqc,25,15,4,45.937333,58.391989,16.386910,75.487757,0 - default

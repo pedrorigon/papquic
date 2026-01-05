@@ -1,0 +1,82 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=10mm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
+\setlength{\aboverulesep}{0.4ex}
+\setlength{\belowrulesep}{0.4ex}
+\setlength{\cmidrulesep}{0.18ex}
+
+\begin{document}
+\centering
+\small
+\begin{tabular}{@{}c c l c c@{}}
+\toprule
+\multirow[c]{2}{*}{\textbf{Nível de Segurança}} & \multirow[c]{2}{*}{\textbf{Categoria do Algoritmo}} & \multirow[c]{2}{*}{\textbf{Algoritmo de Troca de Chave}} & \multicolumn{2}{c}{\textbf{Key Share [B]}} \\
+\cmidrule(lr){4-5}
+\addlinespace[0.45ex]
+ &  &  & \textbf{Cliente} & \textbf{Servidor} \\
+\midrule
+\multirow[c]{5}{*}{\textbf{-}} & \multirow[c]{5}{*}{\textbf{Clássico}} & X25519 & 32 & 32 \\
+ &  & SECP256R1 & 65 & 65 \\
+ &  & SECP384R1 & 97 & 97 \\
+ &  & SECP521R1 & 133 & 133 \\
+ &  & X448 & 56 & 56 \\
+\cmidrule(lr){1-5}
+\multirow[c]{16}{*}{\textbf{I}} & \multirow[c]{5}{*}{\textbf{PQC}} & ML-KEM-512 & 800 & 768 \\
+ &  & BIKE-L1 & 1541 & 1573 \\
+ &  & FRODO-640-AES & 9616 & 9720 \\
+ &  & FRODO-640-SHAKE & 9616 & 9720 \\
+ &  & HQC-128 & 2249 & 4433 \\
+\cmidrule(lr){2-5}
+ & \multirow[c]{11}{*}{\textbf{Híbrido}} & BP256 + ML-KEM-512 & 865 & 833 \\
+ &  & P256 + ML-KEM-512 & 865 & 833 \\
+ &  & P256 + BIKE-L1 & 1606 & 1638 \\
+ &  & P256 + FRODO-640-AES & 9681 & 9785 \\
+ &  & P256 + FRODO-640-SHAKE & 9681 & 9785 \\
+ &  & P256 + HQC-128 & 2314 & 4498 \\
+ &  & X25519 + ML-KEM-512 & 832 & 800 \\
+ &  & X25519 + BIKE-L1 & 1573 & 1605 \\
+ &  & X25519 + FRODO-640-AES & 9648 & 9752 \\
+ &  & X25519 + FRODO-640-SHAKE & 9648 & 9752 \\
+ &  & X25519 + HQC-128 & 2281 & 4465 \\
+\cmidrule(lr){1-5}
+\multirow[c]{18}{*}{\textbf{III}} & \multirow[c]{5}{*}{\textbf{PQC}} & ML-KEM-768 & 1184 & 1088 \\
+ &  & BIKE-L3 & 3083 & 3115 \\
+ &  & FRODO-976-AES & 15632 & 15744 \\
+ &  & FRODO-976-SHAKE & 15632 & 15744 \\
+ &  & HQC-192 & 4522 & 8978 \\
+\cmidrule(lr){2-5}
+ & \multirow[c]{13}{*}{\textbf{Híbrido}} & BP384 + ML-KEM-768 & 1281 & 1185 \\
+ &  & P256 + ML-KEM-768 & 1249 & 1153 \\
+ &  & P384 + ML-KEM-768 & 1281 & 1185 \\
+ &  & P384 + BIKE-L3 & 3180 & 3212 \\
+ &  & P384 + FRODO-976-AES & 15729 & 15841 \\
+ &  & P384 + FRODO-976-SHAKE & 15729 & 15841 \\
+ &  & P384 + HQC-192 & 4619 & 9075 \\
+ &  & X25519 + ML-KEM-768 & 1216 & 1120 \\
+ &  & X448 + ML-KEM-768 & 1240 & 1144 \\
+ &  & X448 + BIKE-L3 & 3139 & 3171 \\
+ &  & X448 + FRODO-976-AES & 15688 & 15800 \\
+ &  & X448 + FRODO-976-SHAKE & 15688 & 15800 \\
+ &  & X448 + HQC-192 & 4578 & 9034 \\
+\cmidrule(lr){1-5}
+\multirow[c]{12}{*}{\textbf{V}} & \multirow[c]{5}{*}{\textbf{PQC}} & ML-KEM-1024 & 1568 & 1568 \\
+ &  & BIKE-L5 & 5122 & 5154 \\
+ &  & FRODO-1344-AES & 21520 & 21632 \\
+ &  & FRODO-1344-SHAKE & 21520 & 21632 \\
+ &  & HQC-256 & 7245 & 14421 \\
+\cmidrule(lr){2-5}
+ & \multirow[c]{7}{*}{\textbf{Híbrido}} & BP512 + ML-KEM-1024 & 1697 & 1697 \\
+ &  & P384 + ML-KEM-1024 & 1665 & 1665 \\
+ &  & P521 + ML-KEM-1024 & 1701 & 1701 \\
+ &  & P521 + BIKE-L5 & 5255 & 5287 \\
+ &  & P521 + FRODO-1344-AES & 21653 & 21765 \\
+ &  & P521 + FRODO-1344-SHAKE & 21653 & 21765 \\
+ &  & P521 + HQC-256 & 7378 & 14554 \\
+\bottomrule
+\end{tabular}
+\end{document}

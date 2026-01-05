@@ -1,0 +1,72 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=10mm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
+\setlength{\aboverulesep}{0.4ex}
+\setlength{\belowrulesep}{0.4ex}
+\setlength{\cmidrulesep}{0.18ex}
+
+\begin{document}
+\centering
+\small
+\begin{tabular}{@{}l l c c c c c c@{}}
+\toprule
+\multicolumn{2}{c}{\textbf{Algoritmo}} & \multicolumn{6}{c}{\textbf{Latência do Handshake [ms]}} \\
+\cmidrule(lr){1-2}\cmidrule(lr){3-8}
+\textbf{Troca de Chave} & \textbf{Assinatura} & \textbf{Desligado} & \textbf{Padrão(3x)} & \textbf{5x} & \textbf{10x} & \textbf{15x} & \textbf{20x} \\
+\midrule
+BP512 + ML-KEM-1024 & P521 + ML-DSA-87 & 12.8±0.5 & 21.1±0.7 & - & - & - & - \\
+BP512 + ML-KEM-1024 & P521 + FALCON-1024 & 14.0±1.2 & 19.0±3.6 & - & - & - & - \\
+BP512 + ML-KEM-1024 & P521 + FALCON-PADDED-1024 & 13.0±0.5 & 22.7±1.7 & - & - & - & - \\
+BP512 + ML-KEM-1024 & P521 + SPHINCS-SHA2-256-F-SIMPLE & 36.6±1.5 & 65.9±4.8 & - & - & - & - \\
+BP512 + ML-KEM-1024 & P521 + SPHINCS-SHA2-256-S-SIMPLE & 207.0±0.8 & 246.3±5.9 & - & - & - & - \\
+BP512 + ML-KEM-1024 & P521 + SPHINCS-SHAKE-256-F-SIMPLE & 58.8±1.1 & 100.6±4.3 & - & - & - & - \\
+BP512 + ML-KEM-1024 & P521 + SPHINCS-SHAKE-256-S-SIMPLE & 402.2±1.4 & 443.0±1.7 & - & - & - & - \\
+P384 + ML-KEM-1024 & P521 + ML-DSA-87 & 7.9±0.2 & 14.7±3.9 & - & - & - & - \\
+P384 + ML-KEM-1024 & P521 + FALCON-1024 & 8.1±0.3 & 12.0±1.8 & - & - & - & - \\
+P384 + ML-KEM-1024 & P521 + FALCON-PADDED-1024 & 8.2±0.2 & 12.9±2.0 & - & - & - & - \\
+P384 + ML-KEM-1024 & P521 + SPHINCS-SHA2-256-F-SIMPLE & 29.9±1.3 & 52.9±11.4 & - & - & - & - \\
+P384 + ML-KEM-1024 & P521 + SPHINCS-SHA2-256-S-SIMPLE & 201.3±0.7 & 263.5±60.8 & - & - & - & - \\
+P384 + ML-KEM-1024 & P521 + SPHINCS-SHAKE-256-F-SIMPLE & 50.8±0.4 & 110.9±23.6 & - & - & - & - \\
+P384 + ML-KEM-1024 & P521 + SPHINCS-SHAKE-256-S-SIMPLE & 393.4±1.1 & 448.1±37.6 & - & - & - & - \\
+P521 + ML-KEM-1024 & P521 + ML-DSA-87 & 14.9±0.3 & 32.4±7.7 & - & - & - & - \\
+P521 + ML-KEM-1024 & P521 + FALCON-1024 & 14.7±0.1 & 26.9±0.8 & - & - & - & - \\
+P521 + ML-KEM-1024 & P521 + FALCON-PADDED-1024 & 15.0±0.2 & 27.4±2.3 & - & - & - & - \\
+P521 + ML-KEM-1024 & P521 + SPHINCS-SHA2-256-F-SIMPLE & 35.2±0.3 & 71.3±1.2 & - & - & - & - \\
+P521 + ML-KEM-1024 & P521 + SPHINCS-SHA2-256-S-SIMPLE & 205.8±0.2 & 254.2±25.4 & - & - & - & - \\
+P521 + ML-KEM-1024 & P521 + SPHINCS-SHAKE-256-F-SIMPLE & 57.8±0.4 & 93.0±18.1 & - & - & - & - \\
+P521 + ML-KEM-1024 & P521 + SPHINCS-SHAKE-256-S-SIMPLE & 399.7±1.5 & 454.6±45.8 & - & - & - & - \\
+P521 + BIKE-L5 & P521 + ML-DSA-87 & 19.2±0.2 & 24.1±6.3 & - & - & - & - \\
+P521 + BIKE-L5 & P521 + FALCON-1024 & 19.8±0.3 & 24.8±6.0 & - & - & - & - \\
+P521 + BIKE-L5 & P521 + FALCON-PADDED-1024 & 19.8±0.2 & 28.2±6.9 & - & - & - & - \\
+P521 + BIKE-L5 & P521 + SPHINCS-SHA2-256-F-SIMPLE & 40.0±0.4 & 72.7±5.8 & - & - & - & - \\
+P521 + BIKE-L5 & P521 + SPHINCS-SHA2-256-S-SIMPLE & 211.9±1.2 & 251.0±18.7 & - & - & - & - \\
+P521 + BIKE-L5 & P521 + SPHINCS-SHAKE-256-F-SIMPLE & 64.9±0.5 & 105.3±21.4 & - & - & - & - \\
+P521 + BIKE-L5 & P521 + SPHINCS-SHAKE-256-S-SIMPLE & 404.7±0.9 & 455.1±12.1 & - & - & - & - \\
+P521 + FRODO-1344-AES & P521 + ML-DSA-87 & 22.9±3.9 & 30.4±0.4 & - & - & - & - \\
+P521 + FRODO-1344-AES & P521 + FALCON-1024 & 23.3±3.6 & 30.3±2.3 & - & - & - & - \\
+P521 + FRODO-1344-AES & P521 + FALCON-PADDED-1024 & 20.6±3.8 & 31.0±0.3 & - & - & - & - \\
+P521 + FRODO-1344-AES & P521 + SPHINCS-SHA2-256-F-SIMPLE & 39.2±0.9 & - & - & - & - & - \\
+P521 + FRODO-1344-AES & P521 + SPHINCS-SHA2-256-S-SIMPLE & 210.0±2.0 & - & - & - & - & - \\
+P521 + FRODO-1344-AES & P521 + SPHINCS-SHAKE-256-F-SIMPLE & 61.7±1.9 & - & - & - & - & - \\
+P521 + FRODO-1344-AES & P521 + SPHINCS-SHAKE-256-S-SIMPLE & 403.7±2.2 & - & - & - & - & - \\
+P521 + FRODO-1344-SHAKE & P521 + ML-DSA-87 & 24.2±0.9 & 42.5±1.9 & - & - & - & - \\
+P521 + FRODO-1344-SHAKE & P521 + FALCON-1024 & 23.9±0.5 & - & - & - & - & - \\
+P521 + FRODO-1344-SHAKE & P521 + FALCON-PADDED-1024 & 24.2±1.0 & - & - & - & - & - \\
+P521 + FRODO-1344-SHAKE & P521 + SPHINCS-SHA2-256-F-SIMPLE & 54.2±12.8 & - & - & - & - & - \\
+P521 + FRODO-1344-SHAKE & P521 + SPHINCS-SHA2-256-S-SIMPLE & 214.3±0.2 & - & - & - & - & - \\
+P521 + FRODO-1344-SHAKE & P521 + SPHINCS-SHAKE-256-F-SIMPLE & 72.1±2.5 & - & - & - & - & - \\
+P521 + FRODO-1344-SHAKE & P521 + SPHINCS-SHAKE-256-S-SIMPLE & 412.6±6.2 & - & - & - & - & - \\
+P521 + HQC-256 & P521 + ML-DSA-87 & 143.2±0.4 & 68022.1±14761.7 & - & - & - & - \\
+P521 + HQC-256 & P521 + FALCON-1024 & 150.0±7.8 & 61633.2±16323.2 & - & - & - & - \\
+P521 + HQC-256 & P521 + FALCON-PADDED-1024 & 143.8±0.9 & 63257.6±14466.7 & - & - & - & - \\
+P521 + HQC-256 & P521 + SPHINCS-SHA2-256-F-SIMPLE & 162.9±0.7 & 77543.3±475.9 & - & - & - & - \\
+P521 + HQC-256 & P521 + SPHINCS-SHA2-256-S-SIMPLE & 375.5±11.4 & 77814.0±265.3 & - & - & - & - \\
+P521 + HQC-256 & P521 + SPHINCS-SHAKE-256-F-SIMPLE & 197.7±17.0 & 77563.3±350.4 & - & - & - & - \\
+P521 + HQC-256 & P521 + SPHINCS-SHAKE-256-S-SIMPLE & 570.0±5.4 & - & - & - & - & - \\
+\bottomrule
+\end{tabular}
+\end{document}

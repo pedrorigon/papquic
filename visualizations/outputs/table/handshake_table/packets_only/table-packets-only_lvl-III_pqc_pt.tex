@@ -1,0 +1,48 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=10mm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
+\setlength{\aboverulesep}{0.4ex}
+\setlength{\belowrulesep}{0.4ex}
+\setlength{\cmidrulesep}{0.18ex}
+
+\begin{document}
+\centering
+\small
+\begin{tabular}{@{}l l c c c c@{}}
+\toprule
+\multicolumn{2}{c}{\textbf{Algoritmo}} & \multicolumn{2}{c}{\textbf{Handshake}} & \multicolumn{2}{c}{\textbf{Pacotes Trocados [C / S]}} \\
+\cmidrule(lr){1-2}\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+\textbf{Troca de Chave} & \textbf{Assinatura} & \textbf{Latência [ms]} & \textbf{Amplificação Realizada} & \textbf{Número} & \textbf{Tamanho [B]} \\
+\midrule
+ML-KEM-768 & ML-DSA-65 & 2.8±0.7 & 2.77x & 6 / 12 & 3808 / 10557 \\
+ML-KEM-768 & SPHINCS-SHA2-192-F-SIMPLE & 13.5±0.7 & 19.21x & 10 / 66 & 3942 / 75711 \\
+ML-KEM-768 & SPHINCS-SHA2-192-S-SIMPLE & 213.0±0.2 & 9.19x & 7 / 33 & 3849 / 35379 \\
+ML-KEM-768 & SPHINCS-SHAKE-192-F-SIMPLE & 23.8±0.4 & 18.63x & 13 / 66 & 4065 / 75711 \\
+ML-KEM-768 & SPHINCS-SHAKE-192-S-SIMPLE & 453.7±0.3 & 9.25x & 7 / 32 & 3819 / 35337 \\
+BIKE-L3 & ML-DSA-65 & 5.0±0.3 & 2.54x & 7 / 13 & 4978 / 12663 \\
+BIKE-L3 & SPHINCS-SHA2-192-F-SIMPLE & 15.6±0.3 & 14.67x & 15 / 67 & 5306 / 77819 \\
+BIKE-L3 & SPHINCS-SHA2-192-S-SIMPLE & 215.6±0.4 & 7.41x & 9 / 34 & 5060 / 37487 \\
+BIKE-L3 & SPHINCS-SHAKE-192-F-SIMPLE & 26.2±0.4 & 14.67x & 15 / 67 & 5306 / 77819 \\
+BIKE-L3 & SPHINCS-SHAKE-192-S-SIMPLE & 456.5±0.7 & 7.41x & 9 / 34 & 5060 / 37487 \\
+FRODO-976-AES & ML-DSA-65 & 4.8±0.6 & 1.23x & 22 / 27 & 23008 / 28208 \\
+FRODO-976-AES & SPHINCS-SHA2-192-F-SIMPLE & 23.9±0.8 & 3.45x & 27 / 80 & 26690 / 92203 \\
+FRODO-976-AES & SPHINCS-SHA2-192-S-SIMPLE & 214.8±0.3 & 1.86x & 28 / 46 & 27860 / 51829 \\
+FRODO-976-AES & SPHINCS-SHAKE-192-F-SIMPLE & 25.9±0.4 & 3.46x & 27 / 79 & 26660 / 92161 \\
+FRODO-976-AES & SPHINCS-SHAKE-192-S-SIMPLE & 457.0±0.7 & 1.78x & 29 / 47 & 29090 / 51871 \\
+FRODO-976-SHAKE & ML-DSA-65 & 9.8±2.1 & 1.17x & 22 / 27 & 24167 / 28208 \\
+FRODO-976-SHAKE & SPHINCS-SHA2-192-F-SIMPLE & 26.0±5.2 & 3.43x & 31 / 80 & 26854 / 92208 \\
+FRODO-976-SHAKE & SPHINCS-SHA2-192-S-SIMPLE & 219.4±1.6 & 1.72x & 29 / 46 & 30219 / 51829 \\
+FRODO-976-SHAKE & SPHINCS-SHAKE-192-F-SIMPLE & 29.7±1.1 & 3.29x & 31 / 80 & 28013 / 92208 \\
+FRODO-976-SHAKE & SPHINCS-SHAKE-192-S-SIMPLE & 459.8±1.2 & 1.78x & 29 / 46 & 29060 / 51829 \\
+HQC-192 & ML-DSA-65 & 71.6±0.4 & 2.53x & 10 / 18 & 7419 / 18741 \\
+HQC-192 & SPHINCS-SHA2-192-F-SIMPLE & 81.9±0.2 & 10.72x & 20 / 72 & 7829 / 83897 \\
+HQC-192 & SPHINCS-SHA2-192-S-SIMPLE & 281.8±0.4 & 5.84x & 11 / 39 & 7460 / 43565 \\
+HQC-192 & SPHINCS-SHAKE-192-F-SIMPLE & 95.2±1.2 & 10.83x & 18 / 72 & 7747 / 83897 \\
+HQC-192 & SPHINCS-SHAKE-192-S-SIMPLE & 537.3±8.7 & 5.84x & 11 / 39 & 7460 / 43565 \\
+\bottomrule
+\end{tabular}
+\end{document}

@@ -1,0 +1,58 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=10mm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
+\setlength{\aboverulesep}{0.4ex}
+\setlength{\belowrulesep}{0.4ex}
+\setlength{\cmidrulesep}{0.18ex}
+
+\begin{document}
+\centering
+\small
+\begin{tabular}{@{}l l c c c c c c@{}}
+\toprule
+\multicolumn{2}{c}{\textbf{Algoritmo}} & \multicolumn{6}{c}{\textbf{Latência do Handshake [ms]}} \\
+\cmidrule(lr){1-2}\cmidrule(lr){3-8}
+\textbf{Troca de Chave} & \textbf{Assinatura} & \textbf{Desligado} & \textbf{Padrão(3x)} & \textbf{5x} & \textbf{10x} & \textbf{15x} & \textbf{20x} \\
+\midrule
+ML-KEM-1024 & ML-DSA-87 & 3.1±0.3 & 5.4±1.9 & - & - & 4.2±0.5 & 4.3±0.6 \\
+ML-KEM-1024 & FALCON-1024 & 2.8±0.3 & 4.3±0.4 & - & - & 4.1±0.2 & 4.0±0.2 \\
+ML-KEM-1024 & FALCON-PADDED-1024 & 3.1±0.3 & 4.0±0.9 & - & - & 4.1±0.2 & 4.1±0.2 \\
+ML-KEM-1024 & SPHINCS-SHA2-256-F-SIMPLE & 23.2±0.4 & 47.1±4.6 & - & - & 29.4±0.1 & 29.4±0.1 \\
+ML-KEM-1024 & SPHINCS-SHA2-256-S-SIMPLE & 193.9±0.3 & 232.6±12.0 & - & - & - & - \\
+ML-KEM-1024 & SPHINCS-SHAKE-256-F-SIMPLE & 45.9±0.4 & 80.1±15.8 & - & - & 57.7±0.1 & 57.6±0.1 \\
+ML-KEM-1024 & SPHINCS-SHAKE-256-S-SIMPLE & 387.4±0.5 & 406.8±18.0 & - & - & - & - \\
+BIKE-L5 & ML-DSA-87 & 8.3±0.5 & 9.7±1.6 & - & - & 10.2±1.0 & 9.4±0.2 \\
+BIKE-L5 & FALCON-1024 & 8.0±0.3 & 9.6±1.4 & - & - & 9.5±0.2 & 9.4±0.1 \\
+BIKE-L5 & FALCON-PADDED-1024 & 8.0±0.4 & 8.8±1.1 & - & - & 9.5±0.1 & 9.4±0.1 \\
+BIKE-L5 & SPHINCS-SHA2-256-F-SIMPLE & 28.3±0.3 & 52.4±6.2 & - & - & - & - \\
+BIKE-L5 & SPHINCS-SHA2-256-S-SIMPLE & 199.4±0.3 & 230.8±22.4 & - & - & - & - \\
+BIKE-L5 & SPHINCS-SHAKE-256-F-SIMPLE & 51.5±0.6 & 81.1±16.8 & - & - & - & - \\
+BIKE-L5 & SPHINCS-SHAKE-256-S-SIMPLE & 392.3±0.7 & 419.5±19.6 & - & - & - & - \\
+FRODO-1344-AES & ML-DSA-87 & 7.0±1.1 & 9.1±1.0 & - & - & 1006.9±0.7 & 1006.7±0.5 \\
+FRODO-1344-AES & FALCON-1024 & 6.9±0.9 & 9.1±0.3 & - & - & 1006.2±0.1 & 1006.2±0.1 \\
+FRODO-1344-AES & FALCON-PADDED-1024 & 6.8±0.6 & - & - & - & 1006.2±0.2 & 1006.2±0.1 \\
+FRODO-1344-AES & SPHINCS-SHA2-256-F-SIMPLE & 38.4±10.0 & 54.7±2.4 & - & - & - & - \\
+FRODO-1344-AES & SPHINCS-SHA2-256-S-SIMPLE & 199.9±1.2 & 241.3±1.7 & - & - & - & - \\
+FRODO-1344-AES & SPHINCS-SHAKE-256-F-SIMPLE & 50.0±1.7 & - & - & - & - & - \\
+FRODO-1344-AES & SPHINCS-SHAKE-256-S-SIMPLE & 391.1±1.5 & - & - & - & - & - \\
+FRODO-1344-SHAKE & ML-DSA-87 & 16.2±3.5 & - & - & - & 1014.3±0.6 & 1014.4±0.6 \\
+FRODO-1344-SHAKE & FALCON-1024 & 15.8±3.0 & 21.0±0.4 & - & - & 1013.9±0.1 & 1013.9±0.1 \\
+FRODO-1344-SHAKE & FALCON-PADDED-1024 & 15.9±2.4 & - & - & - & 1013.9±0.1 & 1014.1±0.1 \\
+FRODO-1344-SHAKE & SPHINCS-SHA2-256-F-SIMPLE & 42.4±11.0 & - & - & - & - & - \\
+FRODO-1344-SHAKE & SPHINCS-SHA2-256-S-SIMPLE & 204.3±2.5 & - & - & - & - & - \\
+FRODO-1344-SHAKE & SPHINCS-SHAKE-256-F-SIMPLE & 57.1±3.2 & - & - & - & - & - \\
+FRODO-1344-SHAKE & SPHINCS-SHAKE-256-S-SIMPLE & 396.9±1.8 & 441.7±5.6 & - & - & - & - \\
+HQC-256 & ML-DSA-87 & 133.0±1.6 & 69887.3±10154.3 & - & - & - & - \\
+HQC-256 & FALCON-1024 & 134.0±1.5 & - & - & - & - & - \\
+HQC-256 & FALCON-PADDED-1024 & 132.1±0.8 & - & - & - & - & - \\
+HQC-256 & SPHINCS-SHA2-256-F-SIMPLE & 169.3±13.7 & - & - & - & - & - \\
+HQC-256 & SPHINCS-SHA2-256-S-SIMPLE & 354.8±2.1 & 70838.2±1625.3 & - & - & - & - \\
+HQC-256 & SPHINCS-SHAKE-256-F-SIMPLE & 203.4±5.7 & 71865.3±2380.2 & - & - & - & - \\
+HQC-256 & SPHINCS-SHAKE-256-S-SIMPLE & 546.7±15.5 & - & - & - & - & - \\
+\bottomrule
+\end{tabular}
+\end{document}

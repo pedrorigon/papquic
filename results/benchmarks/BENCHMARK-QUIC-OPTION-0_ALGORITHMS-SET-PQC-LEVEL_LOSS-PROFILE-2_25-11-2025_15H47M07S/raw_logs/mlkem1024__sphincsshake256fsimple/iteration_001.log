@@ -1,0 +1,4 @@
+808BB0A0A6750000:error:0A00017E:SSL routines:depack_do_frame_crypto:quic protocol error:ssl/quic/quic_rx_depack.c:307:QUIC error code: 0xd (CRYPTO_BUFFER_EXCEEDED) (triggered by frame type: 0x6 (CRYPTO)), reason: "exceeded maximum crypto buffer"
+808BB0A0A6750000:error:0A0000CF:SSL routines:quic_do_handshake:protocol is shutdown:ssl/quic/quic_impl.c:2039:
+s_client: QUIC transport error CRYPTO_BUFFER_EXCEEDED -- handshake data exceeded the peer's CRYPTO buffer window.
+       Consider increasing the QUIC CRYPTO buffer sizes on both peers or reducing the handshake payload size.

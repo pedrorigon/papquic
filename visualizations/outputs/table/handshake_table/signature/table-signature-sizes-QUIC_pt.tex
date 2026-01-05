@@ -1,0 +1,80 @@
+\documentclass[10pt]{article}
+
+\usepackage[margin=10mm]{geometry}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{multirow}
+\renewcommand{\arraystretch}{1.05}
+\setlength{\tabcolsep}{4pt}
+\setlength{\aboverulesep}{0.4ex}
+\setlength{\belowrulesep}{0.4ex}
+\setlength{\cmidrulesep}{0.18ex}
+
+\begin{document}
+\centering
+\small
+\begin{tabular}{@{}c c l c c@{}}
+\toprule
+\multirow[c]{2}{*}{\textbf{Nível de Segurança}} & \multirow[c]{2}{*}{\textbf{Categoria do Algoritmo}} & \multirow[c]{2}{*}{\textbf{Algoritmo de Assinatura}} & \multicolumn{2}{c}{\textbf{Tamanhos [B]}} \\
+\cmidrule(lr){4-5}
+\addlinespace[0.45ex]
+ &  &  & \textbf{Assinatura} & \textbf{Certificado} \\
+\midrule
+\multirow[c]{2}{*}{\textbf{-}} & \multirow[c]{2}{*}{\textbf{Clássico}} & ED25519 & 64 & 270 \\
+ &  & ED448 & 114 & 345 \\
+\cmidrule(lr){1-5}
+\multirow[c]{18}{*}{\textbf{I}} & \multirow[c]{6}{*}{\textbf{PQC}} & FALCON-512 & 655 & 1741 \\
+ &  & FALCON-PADDED-512 & 666 & 1750 \\
+ &  & SPHINCS-SHA2-128-F-SIMPLE & 17088 & 17305 \\
+ &  & SPHINCS-SHA2-128-S-SIMPLE & 7856 & 8072 \\
+ &  & SPHINCS-SHAKE-128-F-SIMPLE & 17088 & 17305 \\
+ &  & SPHINCS-SHAKE-128-S-SIMPLE & 7856 & 8073 \\
+\cmidrule(lr){2-5}
+ & \multirow[c]{12}{*}{\textbf{Híbrido}} & P256 + FALCON-512 & 730 & 1885 \\
+ &  & P256 + FALCON-PADDED-512 & 741 & 1895 \\
+ &  & P256 + SPHINCS-SHA2-128-F-SIMPLE & 17163 & 17451 \\
+ &  & P256 + SPHINCS-SHA2-128-S-SIMPLE & 7931 & 8218 \\
+ &  & P256 + SPHINCS-SHAKE-128-F-SIMPLE & 17163 & 17449 \\
+ &  & P256 + SPHINCS-SHAKE-128-S-SIMPLE & 7931 & 8218 \\
+ &  & RSA-3072 + FALCON-512 & 1044 & 2532 \\
+ &  & RSA-3072 + FALCON-PADDED-512 & 1054 & 2540 \\
+ &  & RSA-3072 + SPHINCS-SHA2-128-F-SIMPLE & 17476 & 18100 \\
+ &  & RSA-3072 + SPHINCS-SHA2-128-S-SIMPLE & 8244 & 8868 \\
+ &  & RSA-3072 + SPHINCS-SHAKE-128-F-SIMPLE & 17476 & 18100 \\
+ &  & RSA-3072 + SPHINCS-SHAKE-128-S-SIMPLE & 8244 & 8868 \\
+\cmidrule(lr){1-5}
+\multirow[c]{3}{*}{\textbf{II}} & \multirow[c]{1}{*}{\textbf{PQC}} & ML-DSA-44 & 2420 & 3931 \\
+\cmidrule(lr){2-5}
+ & \multirow[c]{2}{*}{\textbf{Híbrido}} & P256 + ML-DSA-44 & 2495 & 4064 \\
+ &  & RSA-3072 + ML-DSA-44 & 2808 & 4709 \\
+\cmidrule(lr){1-5}
+\multirow[c]{10}{*}{\textbf{III}} & \multirow[c]{5}{*}{\textbf{PQC}} & ML-DSA-65 & 3309 & 5460 \\
+ &  & SPHINCS-SHA2-192-F-SIMPLE & 35664 & 35897 \\
+ &  & SPHINCS-SHA2-192-S-SIMPLE & 16224 & 16457 \\
+ &  & SPHINCS-SHAKE-192-F-SIMPLE & 35664 & 35897 \\
+ &  & SPHINCS-SHAKE-192-S-SIMPLE & 16224 & 16457 \\
+\cmidrule(lr){2-5}
+ & \multirow[c]{5}{*}{\textbf{Híbrido}} & P384 + ML-DSA-65 & 3416 & 5656 \\
+ &  & P384 + SPHINCS-SHA2-192-F-SIMPLE & 35771 & 36108 \\
+ &  & P384 + SPHINCS-SHA2-192-S-SIMPLE & 16331 & 16667 \\
+ &  & P384 + SPHINCS-SHAKE-192-F-SIMPLE & 35771 & 36108 \\
+ &  & P384 + SPHINCS-SHAKE-192-S-SIMPLE & 16331 & 16669 \\
+\cmidrule(lr){1-5}
+\multirow[c]{14}{*}{\textbf{V}} & \multirow[c]{7}{*}{\textbf{PQC}} & ML-DSA-87 & 4627 & 7418 \\
+ &  & FALCON-1024 & 1270 & 3253 \\
+ &  & FALCON-PADDED-1024 & 1280 & 3260 \\
+ &  & SPHINCS-SHA2-256-F-SIMPLE & 49856 & 50105 \\
+ &  & SPHINCS-SHA2-256-S-SIMPLE & 29792 & 30041 \\
+ &  & SPHINCS-SHAKE-256-F-SIMPLE & 49856 & 50105 \\
+ &  & SPHINCS-SHAKE-256-S-SIMPLE & 29792 & 30041 \\
+\cmidrule(lr){2-5}
+ & \multirow[c]{7}{*}{\textbf{Híbrido}} & P521 + FALCON-1024 & 1414 & 3530 \\
+ &  & P521 + FALCON-PADDED-1024 & 1423 & 3539 \\
+ &  & P521 + ML-DSA-87 & 4770 & 7684 \\
+ &  & P521 + SPHINCS-SHA2-256-F-SIMPLE & 49998 & 50387 \\
+ &  & P521 + SPHINCS-SHA2-256-S-SIMPLE & 29935 & 30324 \\
+ &  & P521 + SPHINCS-SHAKE-256-F-SIMPLE & 49999 & 50387 \\
+ &  & P521 + SPHINCS-SHAKE-256-S-SIMPLE & 29935 & 30324 \\
+\bottomrule
+\end{tabular}
+\end{document}

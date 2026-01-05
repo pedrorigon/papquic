@@ -1,0 +1,16 @@
+kem,signature,kem_category,signature_category,loss_profile,iterations,outliers_removed,mean_ms,std_ms,ci95_low_ms,ci95_high_ms,quic_mode
+MLKEM512,MLDSA44,pqc,pqc,20,19,1,428.874211,606.531248,156.144500,701.603921,0 - default
+MLKEM512,falcon512,pqc,pqc,20,17,3,357.891765,605.735182,69.943537,645.839992,0 - default
+MLKEM512,falconpadded512,pqc,pqc,20,18,2,559.016111,616.047781,274.416556,843.615666,0 - default
+MLKEM512,sphincssha2128fsimple,pqc,pqc,20,18,2,462.728889,615.414035,178.422110,747.035668,0 - default
+MLKEM512,sphincssha2128ssimple,pqc,pqc,20,18,1,464.973333,453.218732,255.596961,674.349705,0 - default
+MLKEM512,sphincsshake128fsimple,pqc,pqc,20,19,1,296.419474,450.253866,93.960644,498.878303,0 - default
+MLKEM768,MLDSA65,pqc,pqc,20,18,2,342.265556,485.522338,117.965679,566.565432,0 - default
+MLKEM768,sphincssha2192fsimple,pqc,pqc,20,17,2,344.427647,465.236337,123.268331,565.586963,0 - default
+MLKEM768,sphincsshake192fsimple,pqc,pqc,20,16,3,44.724375,12.704618,38.499112,50.949638,0 - default
+MLKEM1024,falcon1024,pqc,pqc,20,18,2,8.413333,5.414951,5.911754,10.914913,0 - default
+MLKEM1024,falconpadded1024,pqc,pqc,20,18,2,5.147778,2.560328,3.964967,6.330589,0 - default
+bikel1,MLDSA44,pqc,pqc,20,18,2,14.860000,14.145647,8.325045,21.394955,0 - default
+bikel1,falcon512,pqc,pqc,20,17,2,11.621765,9.774226,6.975392,16.268137,0 - default
+bikel1,sphincssha2128fsimple,pqc,pqc,20,17,2,23.458235,9.654277,18.868883,28.047587,0 - default
+hqc128,falcon512,pqc,pqc,20,17,2,102.781176,89.956087,60.018767,145.543586,0 - default
